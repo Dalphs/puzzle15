@@ -1,0 +1,35 @@
+body{
+    margin: 0px;
+}
+
+#grid{
+    position: relative;
+    top: calc(560px / 5 / 2 - 12px);
+    left: calc(560px / 5 / 2 - 12px);
+    margin-left: 0px;
+}
+
+#board{
+    width: 560px;
+    height: 560px;
+    border-radius: 0px;
+    background-color: lightblue;
+}
+
+.tile{
+    font-size: 30px;
+    width: calc(560px/5);
+    height: calc(560px/5);
+    background: steelblue;
+    float: left;
+    text-align: center;
+    border-color: lightblue;
+    border-style: inset;
+    color: white;
+   
+}
+
+
+
+
+
