@@ -9,6 +9,7 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <title></title>
         <link rel="stylesheet" type="text/css" href="styles.css">
+        <script src="script.js"></script>
     </head>
     <body>
         <?php
