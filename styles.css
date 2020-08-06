@@ -16,17 +16,25 @@ body{
     background-color: lightblue;
 }
 
-.tile{
+.tile, .tile-n{
     font-size: 30px;
     width: calc(560px/5);
     height: calc(560px/5);
-    background: steelblue;
     float: left;
     text-align: center;
-    border-color: lightblue;
     border-style: inset;
+    border-color: lightblue;
+    line-height: calc(560px/5);
+}
+
+.tile{
     color: white;
-   
+    background: steelblue;
+}
+
+.tile-n{
+    color: white;
+    background: lightsteelblue;
 }
 
 
