@@ -15,8 +15,12 @@ and open the template in the editor.
         <?php
         include "functions.php";
        
-        $new = convertLevel("solvable");
-        $html = parseBoard($new);
+        $new = convertLevel("solvable2");
+        $board = parseBoard($new);
+        $solvable = '<div class="wait" id="solvableContainer" >'
+                . '<h1 id="solvableString">Waiting for server</h1></div>';
+        
+        $html = $board . $solvable;
         echo $html;
         ?>
     </body>

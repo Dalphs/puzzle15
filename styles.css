@@ -14,6 +14,7 @@ body{
     height: 560px;
     border-radius: 0px;
     background-color: lightblue;
+    margin: 0;
 }
 
 .tile, .tile-n{
@@ -35,6 +36,34 @@ body{
 .tile-n{
     color: white;
     background: lightsteelblue;
+}
+
+.wait {
+    width: 560px;
+    margin: 0;
+    padding: 20px 0px;
+    text-align: center;
+    background: khaki;
+}
+
+.true {
+    background: greenyellow;
+    width: 560px;
+    margin: 0;
+    padding: 20px 0px;
+    text-align: center;
+}
+
+.false {
+    background: lightcoral;
+    width: 560px;
+    margin: 0;
+    padding: 20px 0px;
+    text-align: center;
+}
+
+#solvableString {
+    color: white;
 }
 
 
