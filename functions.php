@@ -23,15 +23,16 @@ function convertLevel($name) {
 }
 
 function parseBoard($board) {
+    $counter = 1;    
     $htmlString = 
             '<div id="board">' .
             '  <div id="grid">';
     for ($i = 0; $i < 4; $i++) {
         for($j = 0; $j < 4; $j++) {
             $htmlString .= '<div class="' . (($board[$i][$j] == 16) ? 'tile-n' : 'tile') .
-                    '" id="t' . $board[$i][$j] . '" onclick="tileClicked(' . $board[$i][$j] . ')">' . 
+                    '" id="t' . $counter . '" onclick="tileClicked(' . $counter . ')">' . 
                     (($board[$i][$j] == 16) ? '-' : $board[$i][$j]) . '</div>';
-            
+            $counter++;
         }
     }
     $htmlString .= 

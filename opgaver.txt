@@ -1,0 +1,50 @@
+Opgave 1:
+
+Opgave 1: Filformatet er en txt hvor tallene skirves på første linje
+og alle tal adskilles af "-". Derudover remgår den blanke som 16.
+Tallene skrives på række i stedet for 4x4 format.
+Eksempel:
+1  2  3  4
+5  6  7  8
+9  10 11 12
+13 14 15
+konverteret til filformatet vil det se ud som følgende:
+1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16
+
+
+Opgave 6:
+
+Efter at have leget lidt med spillet har jeg fundet en strategi der virker hver gang.
+
+Først løses øverste række, og tallene sættes på plads to ad gangen:
+1  2  3  4
+x  x  x  x
+x  x  x  x
+x  x  x
+
+Derefter lægges 5 på plads, efterfulgt af 9 og 13 så hele venstre række er ud fyldt
+1  2  3  4
+5  x  x  x
+9  x     x
+13 x  x  x
+
+Nu er der en matrix på 3x3 som skal lægges i orden, og det tages et tal ad gangen.
+Først skal 7 komme efter 6, det gøres ved at lægge 7 ind i midten og dreje rundt indtil det blanke felt
+er efter 6 og det blanke felt byttes med 7 tallet. 
+1  2  3  4
+5  14 10 8
+9     7  11
+13 6  15 12
+
+Herefter skal 8 ind i midten og processen gentages.
+herefter 12 - 15 - 14 - 13 - 10, og til sidst skal 11 være i midten, så falder det hele på plads
+
+
+Opgave 8:
+
+antallet af kombinationer 16 x 15 x 14 x 13 x 12 x 11 x 10 x 9 x 8 x 7 x 6 x 5 x 4 x 3 x 2 x 1 = 2,09*10^13
+For at vide om spillet kan færdiggøres kommer det an på inversion count og placeringen af den blanke firkant
+for at det kan løses kommer det an på om de to variable er ulige eller lige.
+Med risiko få at der vil være får undtagelser i de mest yderlige tilfælde hvil chancen være 50/50 for om variablerne
+er lige eller ulige, og dermed må vi også gå ud fra at chancen er 50/50
+Måske bliver det vist ved at simulere  x-antal spil og se på resultaterne
