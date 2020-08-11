@@ -93,36 +93,32 @@ function initKeyListeners(){
     document.addEventListener("keydown", function (event) {
         var blankCoordinate = locateTile(16);
         var numberCoordinate = [];
-        var cont = true;
+        var cont = false;
         switch (event.key){
             case 'ArrowUp':
-                if (blankCoordinate[1] === 0){
-                    cont = false;
-                } else {
+                if (blankCoordinate[1] !== 0){
+                    cont = true;
                     numberCoordinate[0] = blankCoordinate[0];
                     numberCoordinate[1] = blankCoordinate[1] - 1;
                 }
                 break;
             case 'ArrowDown':
-                if (blankCoordinate[1] === 3){
-                    var cont = false;
-                } else {
+                if (blankCoordinate[1] !== 3){
+                    var cont = true;
                     numberCoordinate[0] = blankCoordinate[0];
                     numberCoordinate[1] = blankCoordinate[1] + 1;
                 }
                 break;
             case 'ArrowRight':
-                if (blankCoordinate[0] === 3){
-                    cont = false;
-                } else {
+                if (blankCoordinate[0] !== 3){
+                    cont = true;
                     numberCoordinate[0] = blankCoordinate[0] + 1;
                     numberCoordinate[1] = blankCoordinate[1];
                 }
                 break;
             case 'ArrowLeft':
-                if (blankCoordinate[0] === 0){
-                    cont = false;
-                } else {
+                if (blankCoordinate[0] !== 0){
+                    cont = true;
                     numberCoordinate[0] = blankCoordinate[0] - 1;
                     numberCoordinate[1] = blankCoordinate[1];
                 }
@@ -134,5 +130,16 @@ function initKeyListeners(){
         }
     })
 }
+
+function getSolution(name){
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onload = function() {
+      var resp = JSON.parse(this.responseText);
+      console.log(resp);
+    };
+    xmlhttp.open("GET", "solveLevel.php?q=" + name, true);
+    xmlhttp.send();
+}
+getSolution("sovable2");
 
 
