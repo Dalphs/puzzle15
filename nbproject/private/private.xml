@@ -5,6 +5,9 @@
         <group>
             <file>file:/C:/xampp/htdocs/puzzle15/styles.css</file>
             <file>file:/C:/xampp/htdocs/puzzle15/script.js</file>
+            <file>file:/C:/xampp/htdocs/puzzle15/solveLevel.php</file>
+            <file>file:/C:/xampp/htdocs/puzzle15/bruteForce.php</file>
+            <file>file:/C:/xampp/htdocs/puzzle15/opgaver.txt</file>
             <file>file:/C:/xampp/htdocs/puzzle15/getLevel.php</file>
             <file>file:/C:/xampp/htdocs/puzzle15/index.php</file>
             <file>file:/C:/xampp/htdocs/puzzle15/functions.php</file>

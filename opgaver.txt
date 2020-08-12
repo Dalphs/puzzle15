@@ -48,3 +48,16 @@ for at det kan løses kommer det an på om de to variable er ulige eller lige.
 Med risiko få at der vil være får undtagelser i de mest yderlige tilfælde hvil chancen være 50/50 for om variablerne
 er lige eller ulige, og dermed må vi også gå ud fra at chancen er 50/50
 Måske bliver det vist ved at simulere  x-antal spil og se på resultaterne
+
+Opgave 9:
+Brute force
+
+Opgave 10:
+det tager ca. 23 sekunder at køre 100.000 sessioner med 40 forskellige træk.
+Hvis vi antager at vi kun kører vores algoritme på spil der kan løses er det kun halvdelen af mutationerne der kan laves.
+derfor tager det i teorien 1.05 * 10^13 /100.000 * 23 = 2.415.000.000
+hvilket svarer til: 
+40.250.000 minutter
+670.833 timer
+27.951 dage
+76,5 år
