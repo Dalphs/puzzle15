@@ -1,4 +1,6 @@
 <?php
+include ("Dao.php");
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -52,7 +54,7 @@ function find($conn, $board){
         echo "doesnt exists";
     }
 }
-find($conn, [[3,2,1], [6,5,4], [9,8,6]]);
+
 
 function boardToString($board){
     $temp = "";
@@ -75,4 +77,8 @@ function movesToString($moves){
 
 
 $conn->close();
+
+$dao = new Dao();
+$dao->find([[3,2,1],[6,5,4],[9,8,7]]);
+$dao->closeConn();
 ?>
