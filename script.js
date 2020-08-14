@@ -13,7 +13,7 @@ function getLevel(name) {
 }
 // lige nu er det hardcoded hvilket level der hentes, 
 // men planen er der skal være en form for drop down med muligheder
-getLevel("solvable2");
+getLevel("rowone");
 initKeyListeners();
 
 //funktion der ændrer teksten og fortæller om levelet kan løses
@@ -125,8 +125,9 @@ function initKeyListeners(){
                 break;    
         }
         if(cont){
+            console.log(numberCoordinate + " " + blankCoordinate)
+            swapTiles(coordinateToNumber(numberCoordinate), level[numberCoordinate[1]][numberCoordinate[0]], coordinateToNumber(blankCoordinate));
             swapValues(numberCoordinate, blankCoordinate);
-            swapTiles(coordinateToNumber(numberCoordinate), level[numberCoordinate[0]][numberCoordinate[1]], coordinateToNumber(blankCoordinate));
         }
     })
 }
@@ -140,6 +141,6 @@ function getSolution(name){
     xmlhttp.open("GET", "solveLevel.php?q=" + name, true);
     xmlhttp.send();
 }
-getSolution("sovable2");
+getSolution("rowone");
 
 

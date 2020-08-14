@@ -60,20 +60,12 @@ class Dao{
 
     function boardToString($board){
         $temp = "";
-        for ($i = 0; $i < 4; $i++){
-            for ($j = 0; $j < 4; $j++){
+        for ($i = 0; $i < sizeof($board); $i++){
+            for ($j = 0; $j < sizeof($board[0]); $j++){
                 $temp .= $board[$i][$j];
             }
         }
         return $temp;
-    }
-
-    function movesToString($moves){
-        $string = "";   
-        foreach ($moves as $move){
-            $string .= $move;
-        }
-        return $string;
     }
 
     function closeConn(){

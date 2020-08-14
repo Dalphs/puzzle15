@@ -1,12 +1,11 @@
 <?php
 include ("Dao.php");
-//set_time_limit(360);
+set_time_limit(10800);
 
 $dao = new Dao();
 
 $initialBoard = [[1, 2, 3, 4],[0, 'x', 'x', 'x'],['x', 'x', 'x', 'x'],['x', 'x', 'x', 'x']];
 $counter = 0;
-set_time_limit(100);
 $dao->insert($initialBoard, "");
 
 function discoverTheWorld($livingMutations, $dao, $counter){
@@ -75,8 +74,8 @@ function swapValues($board, $coordinate1, $coordinate2){
 }
 
 function locateBlank($board){
-    for ($i=0; $i < 4; $i++) { 
-        for ($j=0; $j < 4; $j++) {
+    for ($i=0; $i < sizeof($board); $i++) { 
+        for ($j=0; $j < sizeof($board[0]); $j++) {
             if($board[$i][$j] === 0){
                 return [$j, $i];
             }
