@@ -28,7 +28,7 @@ class Dao{
     }
 
     function createTable(){
-        $sql = "CREATE TABLE firstrow ("
+        $sql = "CREATE TABLE secondrow ("
                 . "id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, "
                 . "board char(255) NOT NULL, "
                 . "moves char(255) NOT NULL)";
@@ -39,17 +39,17 @@ class Dao{
         }
     }
 
-    function insert($board, $moves){
-        $sql = "INSERT INTO firstrow(board, moves) VALUES ('" . $this->boardToString($board) . "', '" . $moves . "')";
+    function insert($row, $board, $moves){
+        $sql = "INSERT INTO " . $row . "(board, moves) VALUES ('" . $this->boardToString($board) . "', '" . $moves . "')";
         if ($this->conn->query($sql  ) === TRUE){
-            echo "table created succesfully";
+            echo "Record inserted";
         } else {
-            echo "Error creating table: " . $this->conn->error;
+            echo "Error inserting record: " . $this->conn->error;
         }
     }
 
     function find($board){
-        $sql = "SELECT board, moves FROM firstrow WHERE board = '" . $this->boardToString($board) . "'";
+        $sql = "SELECT board, moves FROM secondrow WHERE board = '" . $this->boardToString($board) . "'";
         $result = $this->conn->query($sql);
         if ($result->num_rows > 0) {
             return true;

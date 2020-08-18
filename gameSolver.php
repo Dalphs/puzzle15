@@ -5,8 +5,11 @@ set_time_limit(10800);
 $dao = new Dao();
 
 $initialBoard = [[1, 2, 3, 4],[0, 'x', 'x', 'x'],['x', 'x', 'x', 'x'],['x', 'x', 'x', 'x']];
+$secondRow = [[5, 6, 7, 8], [0, 'x', 'x', 'x'], ['x', 'x', 'x', 'x']];
+$bottomTwoBoard = [[9, 'A', 'B', 'C'], ['D', 'E', 'F', 0]];
 $counter = 0;
-$dao->insert($initialBoard, "");
+//$dao->insert("firstrow", $initialBoard, "");
+$dao->insert("secondrow", $secondRow, "");
 
 function discoverTheWorld($livingMutations, $dao, $counter){
     $nextGen = [];
@@ -16,7 +19,7 @@ function discoverTheWorld($livingMutations, $dao, $counter){
         foreach ($newMutations as $new) {
             if(!($dao->find($new[0]))){
                 echo "<br>";
-                $dao->insert($new[0], $new[1]);
+                $dao->insert("secondrow", $new[0], $new[1]);
                 array_push($nextGen, $new);
             }
         }
@@ -53,7 +56,7 @@ function split($mutation){
         $board = swapValues($board, $startingPoint, [$startingPoint[0], $startingPoint[1] - 1]);
         array_push($new, [$board, $moves]);
     }
-    if ($startingPoint[1] < 3){
+    if ($startingPoint[1] < 2){
         $moves = $mutation[1];
         $moves .= "d";
         $board = $mutation[0];
@@ -82,7 +85,7 @@ function locateBlank($board){
         }
     }
 }
-discoverTheWorld([[$initialBoard, ""]], $dao, $counter);
+discoverTheWorld([[$secondRow, ""]], $dao, $counter);
 $dao->closeConn();
 
 ?>
